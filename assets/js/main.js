@@ -86,9 +86,6 @@ for (let i=0;i<Btns.length-1;i++) {
 Btns[Btns.length-1].disabled = true;
 
 
-
-
-
 // INFOS
 
 function ShowInfo() {
