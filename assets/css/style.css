@@ -1,0 +1,276 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Fira Sans;
+    font-weight: 800;
+    background-color: #191919;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+header{
+    margin: 0 auto;
+    background-color: #F25c27;
+    text-align: center;
+    border: 5px outset #191919;
+    height: 16vh;
+}
+.headline{
+    font-size: 2.6em;
+    color: #fff;
+    letter-spacing: 0.8px;
+    background-color: #F25c27;
+    text-shadow: 1.77px 2.22px 3.44px #191919;
+    text-transform: uppercase;
+    animation-name: xy;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+@keyframes xy{
+    0% {margin-left: 1.67%; text-shadow: 1.77px 2.22px 3.44px #000;}
+    33% {margin-right: 1%; text-shadow: 2.77px 0.72px 4.84px #000; letter-spacing: 0.72px;}
+    51% {margin-left: 1%; text-shadow: 1.57px 1.22px 3.44px #191919; letter-spacing: 0.98px;}
+    87% {margin-right: 1%; text-shadow: 2.77px 0.22px 4.94px #fff;letter-spacing: 0.89px;}
+    66% {margin-left: 1%; color: #fff; text-shadow: 3.77px 1.22px 2.44px #000; letter-spacing: 0.69px;}
+    99% {margin-right: 1%; color: black;}
+}
+main{
+    height: 82vh;
+    background-image: url("../img/goal.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+#info {
+    position: fixed;
+    top: 20vh;
+    left: 100%;
+    width: 80%;
+    height: 40vh;
+    text-align: center;
+    background-color: #191919;
+    border: 2.78px outset #ff8c5f;
+    color: #fff;
+    text-shadow: 1.77px 2.22px 3.44px #191919;
+    border-radius: 37px;
+    z-index: 1;
+}
+@keyframes start {
+    to {left: 5%}
+}
+@keyframes continue {
+    to {left: 100%}
+}
+@keyframes goal {
+    0% {background-color: transparent; color: transparent;}
+    10%,25%,40%,55%,70%,85%,100% {left: 5%; background-color: transparent; color: red}
+    5%,20%,35%,50%,65%,80%,95% {left: 5%; background-color: transparent; color:  #f25c27;}
+    10%,25%,40%,55%,70%,85%,97% {left: 5%; background-color: transparent; color: rgba(245, 241, 24, 0.965)}
+    10%,25%,40%,55%,70%,85%,98% {left: 5%; background-color: transparent; color: #fff }
+    15%,30%,45%,60%,75%,90% {left: 5%; background-color: transparent; color: #3dd7ac }
+    10%,25%,40%,55%,70%,85%,99% {left: 5%; background-color: transparent; color: #000}
+}
+#info_text {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 80%;
+    height: 75%;
+    overflow-y: scroll;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 1.2em;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#start_btn {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    width: 40%;
+    background-color: #F25c21;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+#start_btn:hover{
+    background-color: #000;
+    border: 1.7px outset #fff;
+    box-shadow: 1px 2px 2px gold;
+    color: #fff;
+    transition: ease 0.8s;
+    transform: translateZ(5%);
+}
+#screen {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    height: 17vh;
+    border: 2px outset #000;
+    text-shadow: 1.77px 2.92px 3.44px #191919;
+    color: #fff;
+}
+#user {
+    background-color: #212529;
+    height: 100%;
+    width: 40%;
+    flex-grow: 1;
+    font-size: 1em;
+    font-weight: 900;
+    text-align: center;
+}
+#pc {
+    background-color: #3dd7ac;
+    height: 100%;
+    width: 40%;
+    flex-grow: 1;
+    font-size: 1em;
+    font-weight: 900;
+    text-align: center;
+}
+@keyframes appear {
+    to {color: #fff}
+}
+#us, #pcs {
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+#field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#keeper {
+    position: absolute;
+    bottom: 35%;
+    left: 51%;
+    width: 25%;
+    height: 25%;
+    transform: translateX(-50%);
+}
+#ball {
+    position: absolute;
+    text-align: center;
+    bottom: 2.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    height: 20%;
+}
+
+button {
+    position: absolute;
+    width: 25%;
+    height: 10vh;
+    outline: none;
+    color: #000;
+    border-radius: 2.75%;
+    background: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 400;
+    text-shadow: 1.77px 0.92px 1.74px #fff;
+}
+#kick {
+    background-color: #f25c27;
+    border: 4px outset #000;
+    text-shadow: 0.7px 1.92px 1.44px #fff;
+    height: 8%;
+    width: 20%;
+    left: 32.5vw;
+    bottom: calc(2vh + 4vh + 1vh + 8vh + 2vh);
+    font-size: 1.27em;
+    text-decoration: dotted;
+}
+#tl {
+    bottom: calc(1vh + 8vh + 1vh);
+    left: 10.5vw;
+    border: 4px outset #000;
+}
+#bl {
+    bottom: 1vh;
+    left: 10.5vw;
+    border: 4px outset #000;
+}
+#c {
+    bottom: calc(1vh + 4vh + 0.5vh);
+    left: 37.5vw;
+    border: 4px outset #000;
+}
+#tr {
+    bottom: calc(1vh + 8vh + 1vh);
+    right: 10.5vw;
+    border: 4px outset #000;
+}
+#br {
+    bottom: 1vh;
+    right: 10.5vw;
+    border: 4px outset #000;
+}
+
+
+            /* BALL FLIGHT */
+            
+            
+/* TOP-LEFT */
+@keyframes BTL {
+    10% {left: 16%; bottom: 50%; transform: scale(0.7,0.7) translateX(-50%)}
+    100% {left: 16%; bottom: 50%; transform: scale(0.7,0.7) translateX(-50%)}
+}
+/* TOP-RIGHT */
+@keyframes BTR {
+    10% {left: 78%; bottom: 48%; transform: scale(0.7,0.7) translateX(-50%)}
+    100% {left: 78%; bottom: 48%; transform: scale(0.7,0.7) translateX(-50%)}
+}
+/* CENTER */
+@keyframes BC {
+    10% {left: 48%; bottom: 30%; transform:  scale(0.7,0.7) translateX(-50%)}
+    100% {left: 48%; bottom: 30%; transform: scale(0.7,0.7) translateX(-50%)}
+}
+/* BOTTOM-LEFT */
+@keyframes BBL {
+    10% {left: 17%; bottom: 21%; transform:  scale(0.7,0.7) translateX(-50%)}
+    100% {left: 17%; bottom: 21%; transform: scale(0.7,0.7) translateX(-50%)}
+}
+/* BOTTOM-RIGHT */
+@keyframes BBR {
+    10% {left: 79%; bottom: 21%; transform: scale(0.7,0.7) translateX(-50%)}
+    100% {left: 79%; bottom: 21%; transform: scale(0.7,0.7) translateX(-50%)}
+}
+
+
+            /* KEEPER FLIGHT */
+            
+        
+/* TOP-LEFT */
+@keyframes KTL {
+    10% {left: 20%; bottom: 50%; transform: translateX(-50%)}
+    100% {left: 20%; bottom: 50%; transform: translateX(-50%)}
+}
+/* TOP-RIGHT */
+@keyframes KTR {
+    10% {left: 80%; bottom: 48%; transform: translateX(-50%)}
+    100% {left: 80%; bottom: 48%; transform: translateX(-50%)}
+}
+/* CENTER */
+@keyframes KC {
+    10% {left: 51%; bottom: 30%; transform: translateX(-50%)}
+    100% {left: 51%; bottom: 30%; transform: translateX(-50%)}
+}
+/* BOTTOM-LEFT */
+@keyframes KBL {
+    10% {left: 19%; bottom: 20%; transform: translateX(-50%)}
+    100% {left: 19%; bottom: 20%; transform: translateX(-50%)}
+}
+/* BOTTOM-RIGHT */
+@keyframes KBR {
+    10% {left: 81%; bottom: 20%; transform: translateX(-50%)}
+    100% {left: 81%; bottom: 20%; transform: translateX(-50%)}
+}
