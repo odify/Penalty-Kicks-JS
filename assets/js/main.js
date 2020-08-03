@@ -90,8 +90,8 @@ Btns[Btns.length-1].disabled = true;
 
 function ShowInfo() {
 
-    info_text.innerHTML = '<center><span style="color:#FFFFFF">WELCOME TO MY FINAL RESULT OF PENALTY-S-JS </span><br /> HAVE FUN AND GOOD LUCK </center>';
-    info.style.animation = 'start 1.5s 0.4s ease forwards';
+    info_text.innerHTML = '<center><span style="color:#FFFFFF">WELCOME TO PENALTY KICKS JS &#129351;</span><br /> HAVE FUN AND GOOD LUCK </center>';
+    info.style.animation = 'start 1.5s 0.7s ease forwards';
 
     setTimeout(function(){
         user.style.animation = 'appear 1s linear forwards';
@@ -104,9 +104,7 @@ function ShowInfo() {
     },1999)
 }
 
-setTimeout(ShowInfo, 200);
-
-
+setTimeout(ShowInfo, 320);
 
 
 
