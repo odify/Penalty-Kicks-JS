@@ -22,10 +22,10 @@ Get('#pc').innerHTML = 'ENEMY <br /><br /><br />';
 
 
 
-Get('#user').innerHTML += `<span id="us" style="font-size:4em">${us_score}</span>`;
+Get('#user').innerHTML += `<span id="us" style="font-size:3em">${us_score}</span>`;
 
 
-Get('#pc').innerHTML += `<span id="pcs" style="font-size:4em">${pcs_score}</span>`;
+Get('#pc').innerHTML += `<span id="pcs" style="font-size:3em">${pcs_score}</span>`;
 
 
 var us = Get('#us');
@@ -46,6 +46,8 @@ for (let i=0;i<Btns.length-1;i++) {
     Btns[i].disabled = true;
     Btns[i].addEventListener('click', function(){
     
+
+
     if (i == 0) {
         my_corner = 0;
         my_level = 1;
@@ -74,12 +76,13 @@ for (let i=0;i<Btns.length-1;i++) {
     }
     
     for (let j=0;j<Btns.length-1;j++) {
-        Btns[j].style.background = '#191919';
-        Btns[i].style.color = '#FFF';
+
+        Btns[j].style.background = '#02884d';
+        Btns[j].style.color = '#FFFFFF';
     }
     
-    Btns[i].style.background = '#FFF';
-    Btns[i].style.color = '#000';
+    Btns[i].style.background = '#7fff00';
+    Btns[i].style.color = '#000000';
 })
 }
 
@@ -188,21 +191,25 @@ if (!que) {
         keeper.style.animation = 'KTR 2.32s 0.27s ease-out';
     }
 
-
     if (my_corner==0 && my_level==0) {
-        ball.style.animation = 'BBL 2.28s 0.25s ease-out';
+        ball.style.animation = 'BBL 2.28s 0.29s ease-out';
+        ball.style.transform = 'rotate(80deg)';
     }
     else if (my_corner==0 && my_level==1) {
         ball.style.animation = 'BTL 2.3s 0.26s ease-out';
+        ball.style.transform = 'rotate(20deg)';
     }
     else if (my_corner==1) {
-        ball.style.animation = 'BC 2.25s 0.27s ease-out';
+        ball.style.animation = 'BC 2.25s 0.37s ease-out';
+        ball.style.transform = 'rotate(280deg)';
     }
     else if (my_corner==2 && my_level==0) {
-        ball.style.animation = 'BBR 2.3s 0.29s ease-out';
+        ball.style.animation = 'BBR 2.3s 0.43s ease-out';
+        ball.style.transform = 'rotate(380deg)';
     }
     else if (my_corner==2 && my_level==1) {
         ball.style.animation = 'BTR 2.21s 0.28s ease-out';
+        ball.style.transform = 'rotate(80deg)';
     }
     
 
@@ -212,13 +219,14 @@ if (!que) {
 
         setTimeout(function(){
     
-            info.style.fontSize = '3.84em';
+            info.style.fontSize = '4.23em';
+            info.style.fontWeight = '900';
             info.style.fontWeight = 'bold';
             info.style.display = 'flex';
             info.style.justifyContent = 'center';
             info.style.alignItems = 'center';
-            info.innerHTML = 'GOAL !!!';
-            info.style.animation = 'goal 1.2s ease-in';
+            info.innerHTML = 'GOAL !';
+            info.style.animation = 'goal 1.55s ease-in';
     
         }, 991)
     }
@@ -272,12 +280,14 @@ if (que) {
     }
     else if (pc_corner==0 && pc_level==1) {
         ball.style.animation = 'BTL 2.29s 0.28s ease-out';
+        ball.style.transform = 'rotate(200deg)';
     }
     else if (pc_corner==1) {
         ball.style.animation = 'BC 2.31s 0.27s ease-out';
     }
     else if (pc_corner==2 && pc_level==0) {
         ball.style.animation = 'BBR 2.26s 0.19s ease-out';
+        ball.style.transform = 'rotate(100deg)';
     }
     else if (pc_corner==2 && pc_level==1) {
         ball.style.animation = 'BTR 2.28s 0.24s ease-out';
@@ -305,26 +315,27 @@ if (que) {
 
         setTimeout(function(){
     
-            info.style.fontSize = '4.07em';
-            info.style.fontWeight = 'bold';
+            info.style.fontSize = '4em';
+            info.style.fontWeight = '900';
             info.style.display = 'flex';
             info.style.justifyContent = 'center';
             info.style.alignItems = 'center';
-            info.innerHTML = 'PERFECT!<br />YOU ARE<br /> AWESOME!'
-            info.style.animation = 'goal 1.6s linear';
+            info.innerHTML = 'YOU ARE <br /> AWESOME!'
+            info.style.animation = 'goal 1.55s linear';
         }, 1000)
     }
     else {
         pcs_score += 1;
         setTimeout(function(){
     
-            info.style.fontSize = '3.89em';
+            info.style.fontSize = '4em';
             info.style.fontWeight = 'bold';
+            info.style.fontWeight = '900';
             info.style.display = 'flex';
             info.style.justifyContent = 'center';
             info.style.alignItems = 'center';
-            info.innerHTML = 'OHH NOOOO<br />ZOOORG !!!';
-            info.style.animation = 'goal 1.4s linear';
+            info.innerHTML = 'OMG &#129325; <br />WHAT A FAIL';
+            info.style.animation = 'goal 1.6s linear';
         }, 1000)
     }
     
@@ -418,7 +429,7 @@ function SuddenDeath() {
 
     sudden_death = true;
     
-    info_text.innerHTML = '<center><span style="color:red;font-size:1.27em"> FINAL ROUND &#127937; &#127937; &#127937; </span><br /><br /><br />MAKE YOUR LAST TRY<br /><br />TAKE YOUR LAST CHANCE NOW<br /><br /><span style="color:red">&#128170;</span></center>'
+    info_text.innerHTML = '<center><span style="color:#02b62a;font-size:1.34em"> FINAL ROUND &#127937; &#127937; &#127937; </span><br /><br /><br />MAKE YOUR LAST TRY<br /><br />TAKE YOUR LAST CHANCE NOW<br /><br /><span style="color:red">&#128170;</span></center>'
     setTimeout(function(){
             info.style.animation = 'start 1.7s ease forwards';
         },300);
@@ -442,10 +453,10 @@ function End(){
     info.style.color = '#fff';
     info.style.display = 'block';
     info.style.left = '100%';
-    info.style.fontSize = '1.13em';
+    info.style.fontSize = '1.2em';
     info.innerHTML = '<div id="info_text"></div><div id="start_btn">START</div>';
     info_text = Get('#info_text');
-    info_text.style.overflowY = 'scroll';
+
     info_text.style.overflowX = 'hidden';
     start_btn = Get('#start_btn');
     start_btn.style.display = 'flex';
@@ -453,7 +464,7 @@ function End(){
     
     if (us_score > pcs_score) {
 
-        info_text.innerHTML = `<center><span style="color:red">AWESOME !! &#127942; &#127942; &#127942; </span><br /><br />${user_name}<br /> IS THE CHAMPION &#128526;<br /><br /><span style="font-size:3.21em">${us_score} : ${pcs_score}</span><br /><br /><br />Try again..?</center>`;
+        info_text.innerHTML = `<center><span style="color:red">WELL DONE ! &#127942; &#127942; &#127942; </span><br /><br />${user_name}<br /> IS THE CHAMPION &#128526;<br /><br /><span style="font-size:3.21em">${us_score} : ${pcs_score}</span><br /><br /><br />Try again..?</center>`;
         setTimeout(function(){
 
             info.style.animation = 'start 1.7s ease forwards';
@@ -465,7 +476,7 @@ function End(){
     
     if (us_score < pcs_score) {
 
-        info_text.innerHTML = `<center><span style="color:red">LOOOSER &#128518 &#128078;</span><br /> <br /><span style="font-size:3.12em">${us_score} : ${pcs_score}</span><br /><br /><br />Try again...?</center>`;
+        info_text.innerHTML = `<center><span style="color:red">LOOOSER &#129325; &#128518 &#128078;</span><br /> <br /><span style="font-size:3.12em">${us_score} : ${pcs_score}</span><br /> <br />RESTART..?</center>`;
         setTimeout(function(){
             info.style.animation = 'start 1.6s ease forwards';
         },200);
